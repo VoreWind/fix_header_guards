@@ -6,7 +6,7 @@
 
 #include <header_guard_fixer.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   QCoreApplication app(argc, argv);
 
   QStringList arguments = app.arguments();

@@ -6,7 +6,7 @@
 
 #include <QFile>
 
-int HeaderGuardFixer::FixHeaderGuardsInFile(const QString &file_name,
+int HeaderGuardFixer::FixHeaderGuardsInFile(const QString& file_name,
                                             bool is_edit_mode) {
   QFile working_file(file_name);
   QFileInfo working_file_info(working_file);
@@ -34,13 +34,13 @@ int HeaderGuardFixer::FixHeaderGuardsInFile(const QString &file_name,
   return is_guard_ok ? 0 : 1;
 }
 
-bool HeaderGuardFixer::CheckHeaderGuardsInText(const QString &file_text,
-                                               const QString &file_name) {
+bool HeaderGuardFixer::CheckHeaderGuardsInText(const QString& file_text,
+                                               const QString& file_name) {
   QString header_guard_from_file = MakeHeaderGuardFromFileName(file_name);
 
   QString first_guard = "#ifndef " + header_guard_from_file;
   QString second_guard = "#define " + header_guard_from_file;
-  QString third_guard = "#endif // " + header_guard_from_file;
+  QString third_guard = "#endif  // " + header_guard_from_file;
 
   if (!file_text.contains(first_guard) || !file_text.contains(second_guard) ||
       !file_text.contains(third_guard)) {
@@ -50,8 +50,8 @@ bool HeaderGuardFixer::CheckHeaderGuardsInText(const QString &file_text,
   return true;
 }
 
-QString HeaderGuardFixer::FixHeaderGuardsInText(const QString &file_text,
-                                                const QString &file_name) {
+QString HeaderGuardFixer::FixHeaderGuardsInText(const QString& file_text,
+                                                const QString& file_name) {
   QString return_string = file_text;
 
   QString header_guard = FindHeaderGuard(file_text);
@@ -72,7 +72,7 @@ QString HeaderGuardFixer::FixHeaderGuardsInText(const QString &file_text,
   return return_string;
 }
 
-QString HeaderGuardFixer::FindHeaderGuard(const QString &file_text) {
+QString HeaderGuardFixer::FindHeaderGuard(const QString& file_text) {
   QString header_guard_prefix = "#ifndef ";
   int header_guard_position = file_text.indexOf(header_guard_prefix);
   int header_guard_start_position =
@@ -84,8 +84,8 @@ QString HeaderGuardFixer::FindHeaderGuard(const QString &file_text) {
                        space_position - header_guard_start_position);
 }
 
-QString
-HeaderGuardFixer::MakeHeaderGuardFromFileName(const QString &file_name) {
+QString HeaderGuardFixer::MakeHeaderGuardFromFileName(
+    const QString& file_name) {
   QString updated_file_name = file_name;
   updated_file_name.replace(".", "_");
   updated_file_name = updated_file_name.toUpper();
