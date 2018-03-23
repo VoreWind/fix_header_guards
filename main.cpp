@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
   }
 
   int return_code =
-      HeaderFileFixer::FixHeaderGuardsInFile(file_path, is_edit_mode);
+      HeaderFileCleaner::FixHeaderGuardsInFile(file_path, is_edit_mode);
 
   if (return_code != 0) {
     std::cout << file_path.toLocal8Bit().data() << "\n";

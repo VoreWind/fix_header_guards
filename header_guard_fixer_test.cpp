@@ -10,7 +10,7 @@ SCENARIO("Checking header guards") {
 
     WHEN("Run the file through checker function in check mode") {
       auto function_result =
-          HeaderFileFixer::FixHeaderGuardsInFile(wrong_file_path, false);
+          HeaderFileCleaner::FixHeaderGuardsInFile(wrong_file_path, false);
       THEN("Function should return 1 ") { REQUIRE(function_result == 1); }
     }
   }

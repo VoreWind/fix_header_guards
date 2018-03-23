@@ -13,7 +13,9 @@ QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp \
     header_guard_fixer_test.cpp \
-    header_file_cleaner.cpp
+    header_file_cleaner.cpp \
+    header_guard_fixer.cpp \
+    header_guard_maker.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -28,4 +30,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 HEADERS += \
     doctest.h \
-    header_file_cleaner.h
+    header_file_cleaner.h \
+    header_guard_fixer.h \
+    header_guard_maker.h
