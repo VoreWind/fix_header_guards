@@ -13,7 +13,7 @@ bool HeaderGuardFixer::IsFileHeaderGuardValid(const QString& source_file_text,
   QString second_guard = "#define " + header_guard_from_file;
   QString third_guard = "#endif  // " + header_guard_from_file;
 
-  if (!source_file_text.contains(first_guard) ||
+  if (!source_file_text.startsWith(first_guard) ||
       !source_file_text.contains(second_guard) ||
       !source_file_text.contains(third_guard)) {
     return false;
