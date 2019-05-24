@@ -12,6 +12,7 @@ TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp \
+    comment_in_file_start_finder.cpp \
     header_guard_fixer_test.cpp \
     header_file_cleaner.cpp \
     header_guard_fixer.cpp \
@@ -29,6 +30,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
+    comment_in_file_start_finder.h \
     doctest.h \
     header_file_cleaner.h \
     header_guard_fixer.h \
