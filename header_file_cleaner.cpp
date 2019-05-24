@@ -31,8 +31,9 @@ int HeaderFileCleaner::FixHeaderGuardsInFile(const QString &file_name,
     return 0;
   }
 
-  bool is_guard_ok =
-      HeaderGuardFixer::IsFileHeaderGuardValid(file_contents, short_file_path);
+  bool is_guard_ok = HeaderGuardFixer::IsFileHeaderGuardValid(
+      separated_file_text.first, short_file_path);
+
   return is_guard_ok ? 0 : 1;
 }
 

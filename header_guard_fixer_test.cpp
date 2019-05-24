@@ -30,6 +30,7 @@ SCENARIO("Fixing the files with the comments in the beginning") {
     WHEN("Run the file through checker function in check mode") {
       auto comment =
           CommentInFileStartFinder::FindCommentInFileStart(file_contents);
+      qDebug() << comment;
       THEN("Function should return 1 ") { REQUIRE(comment != ""); }
     }
   }
