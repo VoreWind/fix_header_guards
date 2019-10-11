@@ -12,12 +12,12 @@
 int main(int argc, char* argv[]) {
   QCoreApplication app(argc, argv);
 
-  doctest::Context context;
-  int res = context.run();  // run
+  //  doctest::Context context;
+  //  int res = context.run();  // run
 
-  if (context.shouldExit()) {
-    return res;
-  }
+  //  if (context.shouldExit()) {
+  //    return res;
+  //  }
 
   QStringList arguments = app.arguments();
   arguments.pop_front();
