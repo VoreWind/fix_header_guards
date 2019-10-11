@@ -9,9 +9,9 @@ bool HeaderGuardFixer::IsFileHeaderGuardValid(const QString& source_file_text,
   QString header_guard_from_file =
       HeaderGuardMaker::ContructHeaderGuardForFileWithName(short_file_name);
 
-  const QString first_guard = "#ifndef " + header_guard_from_file;
-  QString second_guard = "#define " + header_guard_from_file;
-  QString third_guard = "#endif  // " + header_guard_from_file;
+  const QString first_guard = "#ifndef " + header_guard_from_file + "\n";
+  QString second_guard = "#define " + header_guard_from_file + "\n";
+  QString third_guard = "#endif  // " + header_guard_from_file + "\n";
 
   if (!source_file_text.startsWith(first_guard) ||
       !source_file_text.contains(second_guard) ||
