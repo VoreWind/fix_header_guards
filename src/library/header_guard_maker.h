@@ -5,9 +5,9 @@ class QString;
 
 class HeaderGuardMaker {
  public:
-  static QString ReadHeaderGuardFromText(const QString& text);
+  static QString ReadHeaderGuardFromText(const QString& text) noexcept;
   static QString ContructHeaderGuardForFileWithName(
-      const QString& short_file_name);
+      const QString& short_file_name) noexcept;
 };
 
 #endif  // HEADER_GUARD_MAKER_H
