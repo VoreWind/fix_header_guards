@@ -12,37 +12,27 @@
 
 bool HeaderFileCleaner::FixHeaderGuardsInFile(const QString& file_name,
                                               bool is_edit_mode) noexcept {
-  qDebug() << "this1";
   auto file_contents = ReadContentsOfSourceFile(file_name);
-  qDebug() << "this2";
 
   QFileInfo working_file_info(file_name);
   const auto short_file_path = working_file_info.fileName();
-  qDebug() << "this3";
 
   auto separated_file_text =
       CommentInFileStartFinder::RemoveCommentsFromBeginningOfFile(
           file_contents);
-  qDebug() << "this4";
 
   if (is_edit_mode) {
     QString parsed_file = HeaderGuardFixer::FixHeaderGuardsInText(
         separated_file_text.second, short_file_path);
-    qDebug() << "this5";
 
     file_contents = separated_file_text.first + separated_file_text.second;
     WriteChangesToFile(parsed_file, file_contents, file_name);
-    qDebug() << "this6";
 
     return true;
   }
-  qDebug() << "this7";
 
-  bool is_guard_ok = HeaderGuardFixer::IsFileHeaderGuardValid(
-      separated_file_text.second, short_file_path);
-  int real_result = is_guard_ok ? 0 : 1;
-  qDebug() << real_result;
-  return real_result;
+  return HeaderGuardFixer::IsFileHeaderGuardValid(separated_file_text.second,
+                                                  short_file_path);
 }
 
 QString HeaderFileCleaner::ReadContentsOfSourceFile(
