@@ -9,8 +9,7 @@
 
 SCENARIO("checking header guards") {
   GIVEN("name of a file with wrong header guards") {
-    QString wrong_file_path =
-        "../fix_header_guards-master/examples/wrong_example.h";
+    QString wrong_file_path = ":/files/examples/wrong_example.h";
 
     WHEN("run the file through checker function in check mode") {
       auto function_result =
@@ -22,8 +21,7 @@ SCENARIO("checking header guards") {
 
 SCENARIO("fixing the files with the comments in the beginning") {
   GIVEN("name of a file with wrong header guards") {
-    QString commented_file_path =
-        "../fix_header_guards-master/examples/example_with_comment.h";
+    QString commented_file_path = ":/files/examples/example_with_comment.h";
     QString file_contents =
         HeaderFileCleaner::ReadContentsOfSourceFile(commented_file_path);
 

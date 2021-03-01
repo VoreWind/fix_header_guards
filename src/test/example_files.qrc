@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/files">
+        <file>examples/example_with_comment.h</file>
+        <file>examples/variable_example.h</file>
+        <file>examples/wrong_example.h</file>
+    </qresource>
+</RCC>

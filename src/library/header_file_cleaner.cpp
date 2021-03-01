@@ -45,8 +45,8 @@ QString HeaderFileCleaner::ReadContentsOfSourceFile(const QString& file_name) {
   return file_contents;
 }
 
-void HeaderFileCleaner::WriteChangesToFile(QString parsed_file,
-                                           QString file_contents,
+void HeaderFileCleaner::WriteChangesToFile(const QString& parsed_file,
+                                           const QString& file_contents,
                                            const QString& file_name) {
   if (parsed_file != file_contents) {
     QFile working_file(file_name);

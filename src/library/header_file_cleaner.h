@@ -10,8 +10,8 @@ class HeaderFileCleaner {
   static QString ReadContentsOfSourceFile(const QString& file_name);
 
  private:
-  static void WriteChangesToFile(QString parsed_file,
-                                 QString file_contents,
+  static void WriteChangesToFile(const QString& parsed_file,
+                                 const QString& file_contents,
                                  const QString& file_name);
 };
 
